@@ -302,6 +302,24 @@
         font-size: 18px;
         width: 18px;
         height: 18px;
+        font-family: 'Material Icons' !important;
+        overflow: hidden;
+        text-indent: -9999px;
+        position: relative;
+        
+        &::after {
+          content: attr(data-icon);
+          text-indent: 0;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'Material Icons';
+        }
       }
 
       &:hover {

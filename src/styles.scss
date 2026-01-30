@@ -77,3 +77,26 @@ body {
     padding: 0 !important;
   }
 }
+
+// Material Icons font configuration
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Hide text content in Material Icons - they use ligatures
+mat-icon {
+  font-family: 'Material Icons' !important;
+  overflow: hidden;
+  
+  // Hide any text that appears (icon names like "folder_open", "edit", etc.)
+  // Material Icons should render as glyphs, not text
+  text-indent: -9999px;
+  font-size: 0;
+  
+  // Show the icon using the font ligature
+  &::before {
+    content: attr(data-icon);
+    text-indent: 0;
+    font-size: inherit;
+    font-family: 'Material Icons';
+    display: inline-block;
+  }
+}
